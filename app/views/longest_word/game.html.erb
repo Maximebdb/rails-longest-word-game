@@ -1,0 +1,18 @@
+<div class="card">
+  <h1>Here is your grid</h1>
+  <ul class="list-inline">
+    <% @grid.each do |letter| %>
+     <li class='letter'>
+      <p><%= letter %></p>
+     </li>
+    <%end %>
+  </ul>
+</div>
+<div class="card">
+  <form action="/score" class="form-inline">
+    <input type="hidden" id="start_time" name="start_time" value=<%= @start_time %> />
+    <input type="hidden" id="initial_grid" name="initial_grid" value=<%= @grid.join %> />
+    <input type="text" class="form-control" id="answer" name="answer" placeholder="make a try" />
+    <input type="submit" class="btn btn-primary" value="Go on!" />
+  </form>
+</div>
